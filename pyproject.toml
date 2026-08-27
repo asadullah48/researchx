@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "researchx"
+version = "1.0.0"
+description = "ResearchX: Autonomous Analyst Agent Framework for Multi-Source Triangulation & Verified Market Intelligence"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "ResearchX Intelligence Systems", email = "research@researchx.dev" }]
+keywords = ["autonomous-analyst", "market-intelligence", "triangulation", "cross-reference", "equity-research", "citation-verification"]
+dependencies = [
+    "fastapi>=0.110.0",
+    "uvicorn>=0.29.0",
+    "pydantic>=2.7.0",
+    "httpx>=0.27.0",
+    "pyyaml>=6.0.1"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]

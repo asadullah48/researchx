@@ -1,0 +1,11 @@
+apiVersion: v2
+name: researchx
+description: Helm chart for ResearchX Autonomous Analyst Agent Framework
+type: application
+version: 1.0.0
+appVersion: "1.0.0"
+keywords:
+  - autonomous-analyst
+  - market-intelligence
+  - triangulation
+  - equity-research

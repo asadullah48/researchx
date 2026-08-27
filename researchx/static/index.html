@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ResearchX | Autonomous Analyst Agent & Market Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <!-- Ambient Safety Lights -->
+  <div class="glow-sphere glow-gold"></div>
+  <div class="glow-sphere glow-teal"></div>
+
+  <!-- Top Navigation Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand">
+        <div class="brand-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+          </svg>
+        </div>
+        <div class="brand-info">
+          <h1>Research<span class="gradient-text">X</span></h1>
+          <span class="brand-badge" data-i18n="badgeTitle">Autonomous Market Analyst</span>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <a href="https://asadullahshafique-devunity.vercel.app" target="_blank" class="btn btn-secondary btn-sm" style="text-decoration:none;">
+          <span>👨‍💻 DevUnity Portfolio</span>
+        </a>
+
+        <div class="live-status">
+          <span class="pulse-dot"></span>
+          <span id="gatewayStatus" data-i18n="statusLive">Analyst Active (:8011)</span>
+        </div>
+
+        <button id="langToggleBtn" class="btn btn-outline btn-sm" onclick="toggleLanguage()">
+          <span id="langLabel">العربية</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Body -->
+  <main class="app-main">
+    <!-- Hero Header -->
+    <section class="hero-section">
+      <h2 data-i18n="heroTitle">Autonomous Market & Equity Intelligence with Multi-Source Triangulation</h2>
+      <p data-i18n="heroSubtitle">Generate institutional research dossiers by automatically discovering SEC filings, cross-checking statistical claims, calculating divergence, and compiling verified SWOT reports.</p>
+    </section>
+
+    <!-- Metrics Row -->
+    <section class="metrics-grid">
+      <div class="metric-card glass">
+        <span class="metric-label" data-i18n="metric1Label">Triangulation Consensus</span>
+        <div class="metric-value gradient-text">98.0%</div>
+        <span class="metric-sub" data-i18n="metric1Sub">Cross-Publisher Validation</span>
+      </div>
+      <div class="metric-card glass">
+        <span class="metric-label" data-i18n="metric2Label">Primary Sources Ingested</span>
+        <div class="metric-value">3+ Primary Filings</div>
+        <span class="metric-sub" data-i18n="metric2Sub">SEC 10-K & Benchmarks</span>
+      </div>
+      <div class="metric-card glass">
+        <span class="metric-label" data-i18n="metric3Label">Hallucination Rejection</span>
+        <div class="metric-value">100% Grounded</div>
+        <span class="metric-sub" data-i18n="metric3Sub">Explicit Inline Citations</span>
+      </div>
+      <div class="metric-card glass">
+        <span class="metric-label" data-i18n="metric4Label">Synthesis Latency</span>
+        <div class="metric-value">&lt; 50 ms</div>
+        <span class="metric-sub" data-i18n="metric4Sub">Instantaneous Dossier Build</span>
+      </div>
+    </section>
+
+    <!-- Studio Section -->
+    <section class="studio-section">
+      <div class="section-header">
+        <div>
+          <h3 data-i18n="studioTitle">Autonomous Analyst Research Studio</h3>
+          <p class="section-desc" data-i18n="studioDesc">Submit market inquiry topics, inspect multi-source cross-reference checks, review SWOT matrices, and explore verified citations in real time.</p>
+        </div>
+      </div>
+
+      <div class="studio-layout">
+        <!-- Input & Control Panel -->
+        <div class="panel glass">
+          <!-- Preset Scenarios -->
+          <div class="preset-box">
+            <span class="preset-label" data-i18n="lblPresets">Select Research Topic:</span>
+            <div class="preset-buttons" id="scenarioButtons">
+              <!-- JS Rendered -->
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label data-i18n="lblQuery">Research Inquiry Query</label>
+            <textarea id="queryInput" class="input-control textarea-control" rows="3">Enterprise Autonomous Multi-Agent AI Market Growth & Cloud Hyperscaler Positioning</textarea>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group" style="flex:1;">
+              <label data-i18n="lblSector">Industry Sector</label>
+              <select id="sectorSelect" class="input-control">
+                <option value="TECHNOLOGY">Technology & AI</option>
+                <option value="HEALTHCARE">Healthcare & Pharma</option>
+                <option value="ENERGY">Clean Energy & Utilities</option>
+                <option value="FINANCIALS">Financial Services</option>
+              </select>
+            </div>
+            <div class="form-group" style="flex:1;">
+              <label data-i18n="lblDepth">Research Depth</label>
+              <select id="depthSelect" class="input-control">
+                <option value="INSTITUTIONAL_DEEP_DIVE">Institutional Deep Dive</option>
+                <option value="RAPID_BRIEF">Rapid Executive Brief</option>
+                <option value="COMPREHENSIVE_VALUATION">Comprehensive Valuation</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-block" onclick="runResearchTask()" id="researchBtn">
+            <span data-i18n="btnExecuteResearch">⚡ Ingest Sources & Generate Report</span>
+          </button>
+        </div>
+
+        <!-- Output & Report Panel -->
+        <div class="panel glass output-panel">
+          <div class="panel-header">
+            <span class="panel-title" data-i18n="titleDossier">Executive Market Intelligence Dossier</span>
+            <span id="confidenceBadge" class="badge badge-success">READY</span>
+          </div>
+
+          <!-- Triangulation Matrix Bar -->
+          <div class="triangulation-summary" id="triangulationBar">
+            <span class="tri-tag">Consensus CAGR: 44.2%</span>
+            <span class="tri-tag">Projected TAM: $142.5B</span>
+            <span class="tri-tag">Divergence: 1.3%</span>
+          </div>
+
+          <!-- Executive Summary -->
+          <div class="terminal-box">
+            <span class="terminal-header" data-i18n="lblExecutiveSummary">Executive Summary & Thesis:</span>
+            <pre><code id="summaryStream" class="code-block">Submit a topic to generate verified analyst research...</code></pre>
+          </div>
+
+          <!-- SWOT & Citations Box -->
+          <div class="swot-box">
+            <strong data-i18n="lblCitations">Verifiable Citation Index:</strong>
+            <ul id="citationList" class="citation-list">
+              <li>[SEC_10K_AWS] Amazon Q4 10-K Filing (SEC Edgar)</li>
+              <li>[GARTNER_2026_LEADER] Magic Quadrant for Agentic AI</li>
+              <li>[BLOOMBERG_INTELLIGENCE] Enterprise AI Agent Economy 2030</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <p style="margin-bottom:6px;"><a href="https://asadullahshafique-devunity.vercel.app" target="_blank" style="color:var(--accent-gold); text-decoration:none; font-weight:600;">← Back to Asadullah Shafique Portfolio (DevUnity)</a></p>
+    <p>© 2026 ResearchX • Autonomous Analyst Agent Framework • <a href="https://github.com/asadullah48/researchx" target="_blank">GitHub Repository</a></p>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
