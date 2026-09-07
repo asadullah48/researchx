@@ -68,6 +68,33 @@ uvicorn researchx.server:app --host 127.0.0.1 --port 8011 --reload
 
 ---
 
+## 🤖 Agentic AI Alignment
+
+- **Autonomy** — SearchAgent → VerifyAgent → ReportAgent independently
+  discover, cross-verify, and compile institutional dossiers with no
+  analyst curating the source list by hand.
+- **Resilience** — VerifyAgent's divergence-delta and credibility-weighted
+  consensus scoring exist specifically to catch a claim that only one
+  source supports, so the pipeline self-checks rather than trusting the
+  first source found.
+- **Adaptivity** — the Plan-Act-Verify loop retries/re-triangulates when
+  evidence is thin, adapting its own confidence rather than always
+  reporting the same fixed certainty.
+
+### Roadmap
+
+- Expose SearchAgent/VerifyAgent as MCP tools so other financial-research
+  agent systems can reuse the triangulation step directly.
+- Extend source coverage beyond SEC filings/earnings calls/market data to
+  additional primary-source categories, using the same Plan-Act-Verify
+  shape.
+
+## 🤖 Author
+
+Built by **Asadullah Shafique**.
+
+🔗 Explore my portfolio showcasing Agentic AI projects and real-world applications: [asadullahshafique-devunity.vercel.app](https://asadullahshafique-devunity.vercel.app)
+
 ## 🌐 Connected Ecosystem & Portfolio
 
 - **DevUnity Portfolio**: [https://asadullahshafique-devunity.vercel.app](https://asadullahshafique-devunity.vercel.app)
